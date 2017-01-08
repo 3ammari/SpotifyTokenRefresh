@@ -67,7 +67,7 @@ post '/refresh' do
     refresh_token =     params[:refresh_token]
 
     request.form_data = {
-        "grant_type" => "refresh_token",
+        "grant_type" => "authorization_code",
         "refresh_token" => refresh_token,
         "client_id" => CLIENT_ID,
         "client_secret" => CLIENT_SECRET
