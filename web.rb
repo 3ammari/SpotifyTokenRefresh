@@ -62,7 +62,7 @@ post '/refresh' do
 
     request = Net::HTTP::Post.new("/api/token")
 
-    request.add_field("Authorization", AUTH_HEADER)
+    request.add_field("content_type","application/x-www-form-urlencoded")
 
     refresh_token =     params[:refresh_token]
 
