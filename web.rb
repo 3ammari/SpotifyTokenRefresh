@@ -68,7 +68,9 @@ post '/refresh' do
 
     request.form_data = {
         "grant_type" => "refresh_token",
-        "refresh_token" => refresh_token
+        "refresh_token" => refresh_token,
+        "client_id" => CLIENT_ID,
+        "client_secret" => CLIENT_SECRET
     }
 
     response = http.request(request)
