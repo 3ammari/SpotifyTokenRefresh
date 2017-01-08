@@ -45,7 +45,7 @@ post '/swap' do
         token_data = JSON.parse(response.body)
         refresh_token = token_data["refresh_token"]
         encrypted_token = refresh_token.encrypt(:symmetric, :password => ENCRYPTION_SECRET)
-        token_data["refresh_token"] = encrypted_token
+        token_data["refresh_token"] = token_data["refresh_token"]
         response.body = JSON.dump(token_data)
     end
 
