@@ -64,8 +64,7 @@ post '/refresh' do
 
     request.add_field("Authorization", AUTH_HEADER)
 
-    encrypted_token = params[:refresh_token]
-    refresh_token = encrypted_token.decrypt(:symmetric, :password => ENCRYPTION_SECRET)
+    refresh_token =     params[:refresh_token]
 
     request.form_data = {
         "grant_type" => "refresh_token",
