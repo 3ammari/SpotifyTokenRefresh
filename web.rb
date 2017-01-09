@@ -66,7 +66,7 @@ post '/refresh' do
 
     refresh_token =     params[:refresh_token]
 
-    puts refresh_token
+    puts refresh_token.to_str
     
     request.form_data = {
         "grant_type" => "refresh_token",
@@ -79,7 +79,7 @@ post '/refresh' do
 
     status response.code.to_i
     
-    puts response.code.to_i
+    puts response.code.to_str
     
     return response.body
 
